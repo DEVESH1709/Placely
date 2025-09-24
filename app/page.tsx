@@ -104,7 +104,7 @@ const Page = ()=>{
     [spaces]
   )
 
-  const sctivityOptions = useMemo(
+  const activityOptions = useMemo(
     ()=>Array.from(new Set(spaces.flatMap(s=>s.activities))),
     [spaces]
   )
