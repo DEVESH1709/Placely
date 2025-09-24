@@ -64,7 +64,7 @@ const FilterPanel = ({
                 value={act}
                 checked={selectedActivities.includes(act)}
                 onChange={() => toggleActivity(act)}
-                className="h-4 w-4 text-black focus:ring-black cursor-pointer border-gray-300 rounded"
+                className="h-4 w-4 text-black cursor-pointer border-gray-300 rounded"
               />
               <span className="ml-3 text-sm text-gray-700">{act}</span>
             </label>
