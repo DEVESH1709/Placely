@@ -45,21 +45,21 @@ const categories = [
   },
   {
     name: 'Dance shoot',
-    icon: 'https://framerusercontent.com/images/wYDgcaJWY91ZFkq4SA9KddORLa4.svg',
+    icon: 'https://framerusercontent.com/images/pb9oEob1iKiGtbwpKrY3jQLt5G4.svg',
     title: 'Dance shoot',
     description:
       'Unique space for Choreography videos • Dance reels • Performance captures • Dance tutorials • Competition prep • Movement art and more...',
   },
   {
     name: 'Film Shoot',
-    icon: 'https://framerusercontent.com/images/pb9oEob1iKiGtbwpKrY3jQLt5G4.svg',
+    icon: 'https://framerusercontent.com/images/90TkSxcig4ojJZzyWdohod9pgh8.svg',
     title: 'Film Shoot',
     description:
       'Book locations for Short films • Documentaries • Commercial productions • Web series • Short-form Drama • Indie projects • Cinematic storytelling and more...',
   },
   {
     name: 'Events',
-    icon: 'https://framerusercontent.com/images/7h3M2XKerpPBACMLPpA6tNnCM0.svg',
+    icon: 'https://framerusercontent.com/images/z8SB3GmjLkT6GruBLCtYAQPn4g.svg',
     title: 'Events',
     description:
       'Create memorable gatherings for Brand Launch parties • Networking events • Brand activations • Performances • Celebrations • Corporate events • Baithaks • Book Launches and more...',

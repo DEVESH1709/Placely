@@ -9,7 +9,7 @@ type SpaceCardProps = {
 
 const SpaceCard = ({space}:SpaceCardProps)=>{
     return (
-        <div className ="bg-white rounded-xl cursor-pointer overflow-hidden p-2 hover:shadow-xl hover:bg-gray-200 transition-all duration-300 h-[400px] flex flex-col border border-gray-100 ">
+        <div className ="bg-white rounded-xl cursor-pointer overflow-hidden p-2 hover:shadow-xl hover:bg-gray-200 transition-all duration-300 h-[360px] flex flex-col border border-gray-100 ">
             <div className = "relative rounded-lg h-48 w-full flex-shrink-0">
                 <Image
                 src= {space.image}
@@ -31,6 +31,10 @@ const SpaceCard = ({space}:SpaceCardProps)=>{
             <span className="text-yellow-400 mr-1 cursor-pointer"><CiStar size={24}/></span>
             <span className="text-sm font-medium text-gray-700">{space.rating}</span>
           </div>
+        </div>
+
+        <div className="text-sm text-gray-600">
+          {space.tags.slice(0, 4).join(' • ')} • {space.location}
         </div>
                </div>
             </div>
