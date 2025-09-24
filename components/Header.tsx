@@ -47,20 +47,20 @@ export default function Header() {
 
           <nav className="hidden lg:flex space-x-6 xl:space-x-12">
             <Link
-              href="/find-a-place"
+              href="/"
               className="text-gray-600 hover:text-gray-900 text-sm xl:text-base font-medium transition-colors duration-200 whitespace-nowrap"
             >
               Find a Place
             </Link>
 
             <Link
-              href="/host-your-space"
+              href=""
               className="text-gray-600 hover:text-gray-900 text-sm xl:text-base font-medium transition-colors duration-200 whitespace-nowrap"
             >
               Host Your Space
             </Link>
             <Link
-              href="/how-it-works"
+              href=""
               className="text-gray-600 hover:text-gray-900 text-sm xl:text-base font-medium transition-colors duration-200 whitespace-nowrap"
             >
               How it Works

@@ -206,13 +206,6 @@ const Page = () => {
           </div>
 
           <div className="lg:w-3/4">
-            <div className="mb-6">
-              <p className="text-gray-600">
-                {filteredSpaces.length} spaces found
-                {selectedCategory !== "All Spaces" &&
-                  ` for ${selectedCategory}`}
-              </p>
-            </div>
 
             {loading ? (
               <div className="flex items-center justify-center py-20">
