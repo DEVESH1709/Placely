@@ -36,13 +36,13 @@ const FilterPanel = ({
       <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block  text-sm font-medium  text-gray-700 mb-2">
           Location
         </label>
         <select
           value={selectedLocation}
           onChange={(e) => onLocationChange(e.target.value)}
-          className="w-full p-3 border border-gray-300 cursor-pointer rounded-lg focus:ring-2 focus:ring-black text-black focus:border-transparent"
+          className="w-full p-3 border  text-white  hover:bg-gray-50 hover:text-black transition-colors duration-500 border-gray-300 cursor-pointer rounded-lg focus:ring-2 focus:ring-black bg-black focus:border-transparent"
         >
           <option value="">All Locations</option>
           {locations.map((loc) => (
