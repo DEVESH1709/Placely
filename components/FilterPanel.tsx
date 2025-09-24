@@ -119,7 +119,7 @@ const FilterPanel = ({
           onLocationChange("");
           onActivitiesChange([]);
         }}
-        className="w-full py-2 px-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+        className="w-full py-2 px-4 border cursor-pointer bg-black border-gray-300 rounded-lg text-sm font-medium text-white  hover:bg-gray-50 hover:text-black transition-colors duration-500"
       >
         Clear Filters
       </button>
