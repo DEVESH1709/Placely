@@ -173,7 +173,7 @@ const Page = () => {
                   className={`text-1xl font-medium text-center leading-tight ${
                     selectedCategory === category.name
                       ? "text-blue-700"
-                      : "text-gray-700"
+                      : "text-gray-500"
                   }`}
                 >
                   {category.name}
