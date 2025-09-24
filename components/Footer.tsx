@@ -34,7 +34,7 @@ export default function Footer() {
                 href="#"
                 className="group relative transition-all duration-300 text-lg hover:transform hover:translate-x-2 flex items-center"
               >
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
                   →
                 </span>
                 <span>Find a Space</span>
@@ -43,7 +43,7 @@ export default function Footer() {
                 href="#"
                 className="group relative transition-all duration-300 text-lg hover:transform hover:translate-x-2 flex items-center"
               >
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">
                   →
                 </span>
                 <span>Host a Place</span>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href="#"
                 className="group relative transition-all duration-300 text-lg hover:transform hover:translate-x-2 flex items-center"
               >
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2 ">
                   →
                 </span>
                 <span>How it Works</span>
