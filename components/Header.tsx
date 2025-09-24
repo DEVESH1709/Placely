@@ -119,7 +119,6 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Mobile Menu */}
         <div className={`lg:hidden border-t border-gray-100 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen 
             ? 'max-h-96 opacity-100' 
@@ -148,7 +147,6 @@ export default function Header() {
               How it Works
             </Link>
             
-            {/* Mobile CTA buttons */}
             <div className="pt-3 border-t border-gray-100 space-y-2">
               <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
                 Get in Touch
