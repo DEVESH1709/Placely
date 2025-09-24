@@ -75,6 +75,7 @@ const categories = [
 
 const Page = () => {
   const [spaces, setSpaces] = useState<Space[]>([]);
+  const [loading, setLoading] = useState(true);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(20000);
   const [location, setLocation] = useState("");
@@ -84,6 +85,7 @@ const Page = () => {
   useEffect(() => {
     const fetchSpaces = async () => {
       try {
+        setLoading(true);
         const res = await fetch("/api/spaces");
         const data: Space[] = await res.json();
         setSpaces(data);
@@ -92,6 +94,8 @@ const Page = () => {
         setMaxPrice(Math.max(...prices));
       } catch (err) {
         console.error("Failed to fetch spaces", err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchSpaces();
@@ -210,32 +214,48 @@ const Page = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-              <AnimatePresence>
-                {filteredSpaces.map((space) => (
-                  <motion.div
-                    key={space.id}
-                    layout
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <SpaceCard space={space} />
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-
-            {filteredSpaces.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
-                  No spaces found matching your criteria.
-                </p>
-                <p className="text-gray-400 mt-2">
-                  Try adjusting your filters.
-                </p>
+            {loading ? (
+              <div className="flex items-center justify-center py-20">
+                <div className="flex flex-col items-center space-y-4">
+                  <div className="relative">
+                    <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-lg font-medium text-gray-700">Loading spaces...</p>
+                    <p className="text-sm text-gray-500 mt-1">Please wait while we fetch the best locations</p>
+                  </div>
+                </div>
               </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                  <AnimatePresence>
+                    {filteredSpaces.map((space) => (
+                      <motion.div
+                        key={space.id}
+                        layout
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <SpaceCard space={space} />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </div>
+
+                {filteredSpaces.length === 0 && (
+                  <div className="text-center py-12">
+                    <p className="text-gray-500 text-lg">
+                      No spaces found matching your criteria.
+                    </p>
+                    <p className="text-gray-400 mt-2">
+                      Try adjusting your filters.
+                    </p>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>

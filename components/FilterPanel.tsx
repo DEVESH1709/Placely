@@ -42,7 +42,7 @@ const FilterPanel = ({
         <select
           value={selectedLocation}
           onChange={(e) => onLocationChange(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black text-black focus:border-transparent"
+          className="w-full p-3 border border-gray-300 cursor-pointer rounded-lg focus:ring-2 focus:ring-black text-black focus:border-transparent"
         >
           <option value="">All Locations</option>
           {locations.map((loc) => (
@@ -64,7 +64,7 @@ const FilterPanel = ({
                 value={act}
                 checked={selectedActivities.includes(act)}
                 onChange={() => toggleActivity(act)}
-                className="h-4 w-4 text-black focus:ring-black border-gray-300 rounded"
+                className="h-4 w-4 text-black focus:ring-black cursor-pointer border-gray-300 rounded"
               />
               <span className="ml-3 text-sm text-gray-700">{act}</span>
             </label>
