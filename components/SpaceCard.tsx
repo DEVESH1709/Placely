@@ -9,24 +9,25 @@ type SpaceCardProps = {
 
 const SpaceCard = ({ space }: SpaceCardProps) => {
   return (
-    <div className="bg-white rounded-xl cursor-pointer overflow-hidden p-2 hover:shadow-xl hover:bg-gray-200 transition-all duration-300 h-[360px] flex flex-col border border-gray-100 ">
-      <div className="relative rounded-lg h-48 w-full flex-shrink-0">
+    <div className="group bg-white rounded-xl cursor-pointer overflow-hidden p-2 hover:shadow-2xl hover:shadow-blue-100/50 hover:bg-gradient-to-br hover:from-blue-100 hover:to-purple-50 transition-all duration-500 ease-out h-[360px] flex flex-col border border-gray-100 hover:border-blue-200 hover:-translate-y-2 hover:scale-[1.02] transform-gpu">
+      <div className="relative rounded-lg h-48 w-full flex-shrink-0 overflow-hidden">
         <Image
           src={space.image}
           alt={space.title}
           fill
-          className="object-cover rounded-2xl"
+          className="object-cover rounded-2xl transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       </div>
       <div className="p-2 flex-1 flex flex-col justify-between">
         <div>
-          <div className="mb-2 flex item-center justify-between">
-            <h3 className="text-lg font-bold text-gray-900 mb-1">
+          <div className="mb-2 flex item-center justify-between gap-2">
+            <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-800 transition-colors duration-300">
               {space.title}
             </h3>
-            <span className="text-lg text-gray-900">
+            <span className="text-lg text-gray-900 transition-colors duration-300">
               Rs.{" "}
-              <span className="font-medium">
+              <span className="font-medium  transition-all duration-300">
                 {space.price.toLocaleString()}{" "}
               </span>
               per hour
@@ -34,16 +35,16 @@ const SpaceCard = ({ space }: SpaceCardProps) => {
           </div>
 
           <div className="flex items-center">
-            <span className="text-yellow-400 mr-1 cursor-pointer">
+            <span className="text-yellow-400 mr-1 cursor-pointer group-hover:text-yellow-500 group-hover:scale-125 transition-all duration-300 transform">
               <CiStar size={24} />
             </span>
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
               {space.rating}
             </span>
           </div>
         </div>
 
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 group-hover:font-medium">
           {space.tags.slice(0, 4).join(" • ")} • {space.location}
         </div>
       </div>
