@@ -245,6 +245,19 @@ const Page = () => {
                   </AnimatePresence>
                 </div>
 
+                {filteredSpaces.length > 0 && (
+                  <motion.div 
+                    className="text-right py-12 pr-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
+                      ...and more yet to come.
+                    </p>
+                  </motion.div>
+                )}
+
                 {filteredSpaces.length === 0 && (
                   <div className="text-center py-12">
                     <p className="text-gray-500 text-lg">
