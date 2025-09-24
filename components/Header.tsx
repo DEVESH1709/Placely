@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <header
-      className={`bg-white shadow-md mx-2 sm:mx-4 md:mx-7 rounded-2xl sm:rounded-3xl md:rounded-4xl fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`bg-white shadow-md  mx-2 sm:mx-4 md:mx-7 rounded-2xl sm:rounded-3xl md:rounded-4xl fixed top-0 left-0 right-0 z-50 mt-5 transition-all duration-300 ease-in-out ${
         isVisible
           ? "transform translate-y-0 opacity-100"
           : "transform -translate-y-full opacity-0 pointer-events-none"
