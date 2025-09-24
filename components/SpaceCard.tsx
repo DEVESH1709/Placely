@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Space } from '@/data/spaces';
+import { CiStar } from "react-icons/ci";
 
 type SpaceCardProps = {
     space :Space
@@ -27,12 +28,12 @@ const SpaceCard = ({space}:SpaceCardProps)=>{
           </div>
 
             <div className="flex items-center">
-            <span className="text-yellow-400 mr-1">*</span>
+            <span className="text-yellow-400 mr-1"><CiStar size={24}/></span>
             <span className="text-sm font-medium text-gray-700">{space.rating}</span>
           </div>
         </div>
-        </div>
-        </div>
+               </div>
+            </div>
 
         
     )
