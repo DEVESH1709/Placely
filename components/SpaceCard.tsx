@@ -28,7 +28,7 @@ const SpaceCard = ({space}:SpaceCardProps)=>{
           </div>
 
             <div className="flex items-center">
-            <span className="text-yellow-400 mr-1"><CiStar size={24}/></span>
+            <span className="text-yellow-400 mr-1 cursor-pointer"><CiStar size={24}/></span>
             <span className="text-sm font-medium text-gray-700">{space.rating}</span>
           </div>
         </div>
