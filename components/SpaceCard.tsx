@@ -27,7 +27,7 @@ const SpaceCard = ({ space }: SpaceCardProps) => {
             </h3>
             <span className="text-lg text-gray-900 transition-colors duration-300">
               Rs.{" "}
-              <span className="font-medium  transition-all duration-300">
+              <span className="font-medium  transition-all duration-10">
                 {space.price.toLocaleString()}{" "}
               </span>
               per hour
