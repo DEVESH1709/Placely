@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Space } from "@/data/spaces";
 import { CiStar } from "react-icons/ci";
@@ -8,6 +8,14 @@ type SpaceCardProps = {
 };
 
 const SpaceCard = ({ space }: SpaceCardProps) => {
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  const toggleFavorite = (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    e.stopPropagation();
+    setIsFavorited(!isFavorited);
+  };
+
   return (
     <div className="group bg-white rounded-xl cursor-pointer overflow-hidden p-2 hover:shadow-2xl hover:shadow-blue-100/50 hover:bg-gradient-to-br hover:from-blue-100 hover:to-purple-50 transition-all duration-500 ease-out h-[360px] flex flex-col border border-gray-100 hover:border-blue-200 hover:-translate-y-2 hover:scale-[1.02] transform-gpu">
       <div className="relative rounded-lg h-48 w-full flex-shrink-0 overflow-hidden">
@@ -35,8 +43,18 @@ const SpaceCard = ({ space }: SpaceCardProps) => {
           </div>
 
           <div className="flex items-center">
-            <span className="text-yellow-400 mr-1 cursor-pointer group-hover:text-yellow-500 group-hover:scale-125 transition-all duration-300 transform">
-              <CiStar size={24} />
+            <span
+              onClick={toggleFavorite}
+              className="mr-1 cursor-pointer transition-all duration-300"
+            >
+              <CiStar 
+                size={24} 
+                className={`transition-colors duration-300 ${
+                  isFavorited 
+                    ? 'text-yellow-500 ' 
+                    : 'text-gray-400 hover:text-yellow-400'
+                }`} 
+              />
             </span>
             <span className="text-sm font-medium text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
               {space.rating}
