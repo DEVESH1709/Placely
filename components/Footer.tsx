@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 pt-8 border-t border-blue-400/30">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-300">
+          <div className="flex flex-col md:flex-wrap md:flex-row gap-2 md:gap-x-6 md:gap-y-2 text-sm text-gray-300">
             <Link
               href="#"
               className="hover:text-white transition-colors duration-200"
