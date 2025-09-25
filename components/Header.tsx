@@ -86,14 +86,14 @@ export default function Header() {
                 />
               </svg>
             </button>
-            <button 
+            <button
               className="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
               <svg
                 className={`h-5 w-5 sm:h-6 sm:w-6 transform transition-transform duration-200 ${
-                  isMobileMenuOpen ? 'rotate-90' : ''
+                  isMobileMenuOpen ? "rotate-90" : ""
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
@@ -118,12 +118,14 @@ export default function Header() {
             </button>
           </div>
         </div>
-        
-        <div className={`lg:hidden border-t border-gray-100 transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen 
-            ? 'max-h-96 opacity-100' 
-            : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
+
+        <div
+          className={`lg:hidden border-t border-gray-100 transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
           <div className="px-2 pt-3 pb-4 space-y-2">
             <Link
               href="/find-a-place"
@@ -146,7 +148,7 @@ export default function Header() {
             >
               How it Works
             </Link>
-            
+
             <div className="pt-3 border-t border-gray-100 space-y-2">
               <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
                 Get in Touch
