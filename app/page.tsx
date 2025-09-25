@@ -6,6 +6,7 @@ import { Space } from "@/data/spaces";
 import { AnimatePresence, motion } from "framer-motion";
 import SpaceCard from "@/components/SpaceCard";
 import FilterPanel from "@/components/FilterPanel";
+import { FiMail, FiPhone } from "react-icons/fi";
 
 const categories = [
   {
@@ -307,6 +308,26 @@ const Page = () => {
           </div>
         </div>
       </main>
+      <div className="fixed bottom-8 right-8 z-50 ">
+        <div className="group flex items-center">
+          <motion.button
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2 group-hover:rounded-r-none group-hover:pr-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FiMail className="w-5 h-5" />
+            <span className="font-medium cursor-pointer">Get in Touch</span>
+          </motion.button>
+
+          <motion.div
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 group-hover:rounded-l-none"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FiPhone className="w-5 h-5 cursor-pointer" />
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };
