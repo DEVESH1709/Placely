@@ -149,7 +149,7 @@ const Page = () => {
 
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="hidden md:flex flex-wrap justify-center gap-6">
             {categories.map((category) => (
               <button
                 key={category.name}
@@ -181,6 +181,44 @@ const Page = () => {
               </button>
             ))}
           </div>
+
+          <div className="md:hidden overflow-x-auto">
+            <div
+              className="flex gap-4 pb-2"
+              style={{ minWidth: "max-content" }}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category.name}
+                  onClick={() => setSelectedCategory(category.name)}
+                  className={`flex flex-col cursor-pointer items-center p-3 rounded-xl transition-all duration-200 hover:shadow-md flex-shrink-0 w-20 ${
+                    selectedCategory === category.name
+                      ? "bg-blue-50 border-2 border-blue-200 shadow-sm"
+                      : "bg-white hover:bg-gray-50"
+                  }`}
+                >
+                  <div className="w-12 h-12 mb-2 flex items-center justify-center">
+                    <Image
+                      src={category.icon}
+                      alt={`${category.name} icon`}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8"
+                    />
+                  </div>
+                  <span
+                    className={`text-xs font-medium text-center leading-tight ${
+                      selectedCategory === category.name
+                        ? "text-blue-700"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {category.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -206,7 +244,6 @@ const Page = () => {
           </div>
 
           <div className="lg:w-3/4">
-
             {loading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="flex flex-col items-center space-y-4">
@@ -214,8 +251,12 @@ const Page = () => {
                     <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
                   </div>
                   <div className="text-center">
-                    <p className="text-lg font-medium text-gray-700">Loading spaces...</p>
-                    <p className="text-sm text-gray-500 mt-1">Please wait while we fetch the best locations</p>
+                    <p className="text-lg font-medium text-gray-700">
+                      Loading spaces...
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Please wait while we fetch the best locations
+                    </p>
                   </div>
                 </div>
               </div>
@@ -239,7 +280,7 @@ const Page = () => {
                 </div>
 
                 {filteredSpaces.length > 0 && (
-                  <motion.div 
+                  <motion.div
                     className="text-right py-12 pr-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
