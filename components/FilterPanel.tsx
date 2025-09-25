@@ -8,6 +8,8 @@ type FilterPanelProps = {
   selectedActivities: string[];
   minPrice: number;
   maxPrice: number;
+  originalMinPrice: number;
+  originalMaxPrice: number;
   onLocationChange: (loc: string) => void;
   onActivitiesChange: (acts: string[]) => void;
   onPriceChange: (min: number, max: number) => void;
@@ -20,6 +22,8 @@ const FilterPanel = ({
   selectedActivities,
   minPrice,
   maxPrice,
+  originalMinPrice,
+  originalMaxPrice,
   onLocationChange,
   onActivitiesChange,
   onPriceChange,
@@ -118,6 +122,7 @@ const FilterPanel = ({
         onClick={() => {
           onLocationChange("");
           onActivitiesChange([]);
+          onPriceChange(originalMinPrice, originalMaxPrice);
         }}
         className="w-full py-2 px-4 border cursor-pointer bg-black border-gray-300 rounded-lg text-sm font-medium text-white  hover:bg-gray-50 hover:text-black transition-colors duration-500"
       >

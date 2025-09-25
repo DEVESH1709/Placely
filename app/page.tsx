@@ -79,6 +79,8 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(20000);
+  const [originalMinPrice, setOriginalMinPrice] = useState(0);
+  const [originalMaxPrice, setOriginalMaxPrice] = useState(20000);
   const [location, setLocation] = useState("");
   const [activities, setActivities] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All Spaces");
@@ -91,8 +93,12 @@ const Page = () => {
         const data: Space[] = await res.json();
         setSpaces(data);
         const prices = data.map((s) => s.price);
-        setMinPrice(Math.min(...prices));
-        setMaxPrice(Math.max(...prices));
+        const minPriceValue = Math.min(...prices);
+        const maxPriceValue = Math.max(...prices);
+        setMinPrice(minPriceValue);
+        setMaxPrice(maxPriceValue);
+        setOriginalMinPrice(minPriceValue);
+        setOriginalMaxPrice(maxPriceValue);
       } catch (err) {
         console.error("Failed to fetch spaces", err);
       } finally {
@@ -234,6 +240,8 @@ const Page = () => {
                 selectedActivities={activities}
                 minPrice={minPrice}
                 maxPrice={maxPrice}
+                originalMinPrice={originalMinPrice}
+                originalMaxPrice={originalMaxPrice}
                 onLocationChange={setLocation}
                 onActivitiesChange={setActivities}
                 onPriceChange={(min, max) => {
