@@ -137,11 +137,11 @@ const Page = () => {
     <div className="min-h-screen bg-gray-50">
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-12 text-center min-h-[300px] flex flex-col justify-center">
-          <h1 className="font-bold text-black text-7xl">
+          <h1 className="font-bold text-black text-6xl">
             {currentCategory.title}
           </h1>
           <div className="h-24 flex items-center justify-center">
-            <p className="text-2xl md:text-3xl text-gray-500 line-clamp-2">
+            <p className="text-2xl md:text-2xl text-gray-500 line-clamp-2">
               {currentCategory.description}
             </p>
           </div>
