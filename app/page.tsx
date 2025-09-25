@@ -308,23 +308,23 @@ const Page = () => {
           </div>
         </div>
       </main>
-      <div className="fixed bottom-8 right-8 z-50 ">
+      <div className="fixed bottom-8 right-4 md:right-8 z-50 ">
         <div className="group flex items-center">
           <motion.button
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2 group-hover:rounded-r-none group-hover:pr-2"
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 md:px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2 group-hover:rounded-r-none group-hover:pr-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FiMail className="w-5 h-5" />
-            <span className="font-medium cursor-pointer">Get in Touch</span>
+            <FiMail className="w-4 md:w-5 h-4 md:h-5" />
+            <span className="font-medium cursor-pointer text-sm md:text-base">Get in Touch</span>
           </motion.button>
 
           <motion.div
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 group-hover:rounded-l-none"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 group-hover:rounded-l-none"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FiPhone className="w-5 h-5 cursor-pointer" />
+            <FiPhone className="w-4 md:w-5 h-4 md:h-5 cursor-pointer" />
           </motion.div>
         </div>
       </div>
