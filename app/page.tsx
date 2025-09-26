@@ -84,6 +84,7 @@ const Page = () => {
   const [location, setLocation] = useState("");
   const [activities, setActivities] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All Spaces");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     const fetchSpaces = async () => {
@@ -230,8 +231,20 @@ const Page = () => {
       </section>
 
       <main className="w-full px-4 py-8">
+        <div className="lg:hidden mb-6">
+          <button
+            onClick={() => setIsFilterOpen(true)}
+            className="flex items-center space-x-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z" />
+            </svg>
+            <span className="font-medium text-gray-700">Filters</span>
+          </button>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-1/4">
+          <div className="hidden lg:block lg:w-1/4">
             <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto">
               <FilterPanel
                 locations={locationOptions}
@@ -252,7 +265,42 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="lg:w-3/4">
+          <div className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${isFilterOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsFilterOpen(false)}></div>
+            <div className={`absolute left-0 top-0 h-full w-80 max-w-[85vw] bg-white transform transition-transform duration-300 ease-out ${isFilterOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+              <div className="p-6 h-full overflow-y-auto">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-xl font-semibold text-gray-900">Filters</h2>
+                  <button
+                    onClick={() => setIsFilterOpen(false)}
+                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  >
+                    <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <FilterPanel
+                  locations={locationOptions}
+                  activities={activityOptions}
+                  selectedLocation={location}
+                  selectedActivities={activities}
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
+                  originalMinPrice={originalMinPrice}
+                  originalMaxPrice={originalMaxPrice}
+                  onLocationChange={setLocation}
+                  onActivitiesChange={setActivities}
+                  onPriceChange={(min, max) => {
+                    setMinPrice(min);
+                    setMaxPrice(max);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-3/4">
             {loading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="flex flex-col items-center space-y-4">
